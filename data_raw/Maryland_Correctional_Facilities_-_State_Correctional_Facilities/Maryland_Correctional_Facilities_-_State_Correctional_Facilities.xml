@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20180827</pubdate>
+                <title>Maryland Correctional Facilities - State Correctional Facilities</title>
+                <onlink>https://geodata.md.gov/imap/rest/services/PublicSafety/MD_CorrectionalFacilities/FeatureServer/1</onlink>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>This dataset contains correctional facilities run by the Maryland Department of Public Safety and Corrections (DPSCS).  Data includes year opened, security level and facility administrators.This is a MD iMAP hosted service layer. Find more information at https://imap.maryland.gov.Feature Service Layer Link:https://geodata.md.gov/imap/rest/services/PublicSafety/MD_CorrectionalFacilities/FeatureServer/1</abstract>
+            <purpose>Maryland Correctional Facilities - State Correctional Facilities</purpose>
+        </descript>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>MD</themekey>
+                <themekey>Maryland</themekey>
+                <themekey>MD iMAP</themekey>
+                <themekey>Vector</themekey>
+                <themekey>Dynamic</themekey>
+                <themekey>Prison</themekey>
+                <themekey>Jail</themekey>
+                <themekey>GOCCP</themekey>
+                <themekey>USBOP</themekey>
+                <themekey>DPSCS</themekey>
+                <themekey>Maryland Department of Public Safety and Corrections</themekey>
+                <themekey>Governor's Office of Crime Control and Prevention</themekey>
+                <themekey>U.S. Bureau of Prisons</themekey>
+                <themekey>WFS</themekey>
+                <themekey>WMS</themekey>
+                <themekey>Correctional</themekey>
+                <themekey>KML</themekey>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>The Spatial Data, and the information therein, (collectively the "Data") is provided "as is" without warranty of any kind, either expressed, implied, or statutory. The user assumes the entire risk as to quality and performance of the Data. No guarantee of accuracy is granted, nor is any responsibility for reliance thereon assumed. In no event shall the State of Maryland be liable for direct, indirect, incidental, consequential or special damages of any kind. The State of Maryland does not accept liability for any damages or misrepresentation caused by inaccuracies in the Data or as a result to changes to the Data, nor is there responsibility assumed to maintain the Data in any manner or form. The Data can be freely distributed as long as the metadata entry is not modified or deleted. Any data derived from the Data must acknowledge the State of Maryland in the metadata.</useconst>
+        <datacred>MD iMAP, DPSCS</datacred>
+    </idinfo>
+    <metainfo>
+        <metd>20171013</metd>
+        <metc>
+            <cntinfo>
+                <!--no contact person or organization name available-->
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>
