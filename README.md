@@ -1,7 +1,7 @@
 # Vaccine Equity in Baltimore
 
 ## About
-This project includes data visualization, spatial analysis, and GIS mapping for a research and policy brief on vaccine equity issues in Baltimore, MD, in the early stages of the COVID vaccine rollout in winter 2021. 
+This project includes data visualization and geospatial mapping for a research and policy brief on vaccine equity issues in Baltimore, MD, in the early stages of the COVID vaccine rollout in winter 2021.  
 
 ## Data sources
 
@@ -19,3 +19,5 @@ This project includes data visualization, spatial analysis, and GIS mapping for 
 
 Final maps for the policy brief can be found [here](https://github.com/spaykin/vaccine_equity_baltimore/tree/master/maps).
 
+
+*Last updated: March 15, 2021*
