@@ -1,9 +1,7 @@
 # Vaccine Equity in Baltimore
 
 ## About
-This project includes data visualization, spatial analysis, and GIS mapping as part of a vaccine equity policy brief focused on Baltimore, MD. 
-
-Updated March 2021.
+This project includes data visualization, spatial analysis, and GIS mapping for a research and policy brief on vaccine equity issues in Baltimore, MD, in the early stages of the COVID vaccine rollout in winter 2021. 
 
 ## Data sources
 
@@ -14,9 +12,10 @@ Updated March 2021.
 | County populations (for calculating pop.-adjusted rates) | [U.S. Census, 2019](https://www.census.gov/data/datasets/time-series/demo/popest/2010s-counties-total.html) |
 | Social Vulnerability Index | [CDC Social Vulnerability Index, 2018](https://www.atsdr.cdc.gov/placeandhealth/svi/index.html)
 | Race & Ethnicity Data | [ACS Demographic and Housing Estimates, 2019](https://data.census.gov/cedsci/table?q=Baltimore%20County,%20Maryland%20Race%20and%20Ethnicity&tid=ACSDP1Y2019.DP05&hidePreview=false)
+| State Corrections Facilities Locations | [MD Department of Public Safety and Corrections](https://data.imap.maryland.gov/datasets/ceb79ec747c64368b69f588b1962692c_1)
 
 
 ## Maps
 
-Maps are available to view [here](https://docs.google.com/presentation/u/1/d/1lPczOL6OijhLK8sg2diLlxgpcW_9EIuPIRKP4y40MA4/edit#slide=id.p). 
+Final maps for the policy brief can be found [here](https://github.com/spaykin/vaccine_equity_baltimore/tree/master/maps).
 
