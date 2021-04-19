@@ -1,6 +1,7 @@
 library(tidyverse)
 library(sf)
 library(tmap)
+library(tmaptools)
 
 #### About ----
 
@@ -17,6 +18,8 @@ bmore_tracts <- md_tracts %>% filter(CNTY2010 == "24510")
 zips <- st_read("data_raw/Maryland_Census_Data_-_ZIP_Code_Tabulation_Areas_(ZCTAs)/")
 # Filter for Baltimore zip codes
 bmore_zips <- zips %>% filter(str_detect(ZCTA5CE10, "^2120|^2121|^2122"))
+# Identify priority zip codes
+priority_zips <- bmore_zips %>% filter(ZCTA5CE10 %in% c("21215", "21216", "21217", "21218", "21213", "21205"))
 
 # Transform CRS
 bmore_tracts <- st_transform(bmore_tracts, 26985)
@@ -30,20 +33,113 @@ bmore_svi <- md_svi %>% filter(STCNTY == "24510") %>% select(ST, STATE, ST_ABBR,
 # Code -999s as NA
 bmore_svi <- bmore_svi %>% mutate_if(is.numeric, ~replace(., . == -999.000, NA))
 
+# Baltimore bounding box
+bmore_bbox <- st_bbox(bmore_tracts)
+
 ##### Map ----
 
 # SVI: Overall Ranking Summary
 svi_map <-
   tm_shape(bmore_svi) +
+  tm_fill(col = "RPL_THEMES", alpha = 0.7, 
+          title = "Social Vulnerability",
+          palette = "BuPu") +
+  tm_shape(bmore_zips, bbox = bmore_bbox) +
+  tm_borders(col = "black", lwd = 1) +
+  tm_text("ZCTA5CE10", size = 0.9, bg.color = "white", bg.alpha = 0.5) +
+  tm_layout(frame = FALSE, legend.title.size = 1.5, legend.text.size = 1,
+            legend.bg.color = "white")
+svi_map
+
+svi_map_priority <-
+  tm_shape(bmore_svi) +
   tm_fill(col = "RPL_THEMES", alpha = 0.8, 
           title = "Social Vulnerability",
           palette = "BuPu") +
   tm_shape(bmore_zips, bbox = bmore_bbox) +
-  tm_borders(col = "black", lwd = 0.7) +
-  tm_text("ZCTA5CE10", size = 0.8) +
+  tm_borders(col = "black", lwd = 1.5) +
+  tm_text("ZCTA5CE10", size = 1, bg.color = "white", bg.alpha = 0.5) +
+  tm_shape(priority_zips, bbox = bmore_bbox) +
+  tm_borders(col = "black", lwd = 3) +
+  tm_text("ZCTA5CE10", size = 1, bg.color = "white", bg.alpha = 0.5) +
   tm_layout(frame = FALSE, legend.title.size = 1.5, legend.text.size = 1,
             legend.bg.color = "white")
-svi_map
+
+svi_map_priority
+tmap_save(svi_map_priority, "maps/svi_map_priority.png")
+
+svi_map_priority1 <-
+  tm_shape(bmore_svi) +
+  tm_fill(col = "RPL_THEMES", alpha = 0.8, 
+          title = "Social Vulnerability",
+          palette = "BuPu") +
+  tm_shape(bmore_zips, bbox = bmore_bbox) +
+  tm_borders(col = "black", lwd = 1.5) +
+  tm_text("ZCTA5CE10", size = 1, bg.color = "white", bg.alpha = 0.4) +
+  tm_shape(priority_zips) +
+  tm_borders(col = "black", lwd = 3) +
+  tm_text("ZCTA5CE10", size = 1, col = "black", 
+          bg.color = "magenta", bg.alpha = 0.5) +
+  tm_layout(frame = FALSE, legend.title.size = 1.5, legend.text.size = 1,
+            legend.bg.color = "white")
+
+svi_map_priority1
+tmap_save(svi_map_priority1, "maps/svi_map_priority1.png")
+
+
+svi_map_priority2 <-
+  tm_shape(bmore_svi) +
+  tm_fill(col = "RPL_THEMES", alpha = 0.8, 
+          title = "Social Vulnerability",
+          palette = "BuPu") +
+  tm_shape(bmore_zips, bbox = bmore_bbox) +
+  tm_borders(col = "black", lwd = 1.5) +
+  tm_text("ZCTA5CE10", size = 1, col = "black") +
+  tm_shape(priority_zips) +
+  tm_borders(col = "black", lwd = 2.5) +
+  tm_text("ZCTA5CE10", size = 1, col = "black",
+          bg.color = "magenta", bg.alpha = 0.5) +
+  tm_layout(frame = FALSE, legend.title.size = 1.5, legend.text.size = 1,
+            legend.bg.color = "white")
+
+svi_map_priority2
+tmap_save(svi_map_priority2, "maps/svi_map_priority2.png")
+
+svi_map_priority3 <-
+  tm_shape(bmore_svi) +
+  tm_fill(col = "RPL_THEMES", alpha = 0.8, 
+          title = "Social Vulnerability",
+          palette = "BuPu") +
+  tm_shape(bmore_zips, bbox = bmore_bbox) +
+  tm_borders(col = "black", lwd = 1.5) +
+  tm_text("ZCTA5CE10", size = 1.2, col = "black") +
+  tm_shape(priority_zips) +
+  tm_borders(col = "black", lwd = 2.5) +
+  tm_text("ZCTA5CE10", size = 1.2, col = "black",
+          bg.color = "magenta", bg.alpha = 0.5) +
+  tm_layout(frame = FALSE, legend.title.size = 1.5, legend.text.size = 1,
+            legend.bg.color = "white")
+
+svi_map_priority3
+tmap_save(svi_map_priority3, "maps/svi_map_priority3.png")
+
+svi_map_priority4 <-
+  tm_shape(bmore_svi) +
+  tm_fill(col = "RPL_THEMES", alpha = 0.8, 
+          title = "Social Vulnerability",
+          palette = "BuPu") +
+  tm_shape(bmore_zips, bbox = bmore_bbox) +
+  tm_borders(col = "black", lwd = 1.5) +
+  tm_text("ZCTA5CE10", size = 1.2, bg.color = "white", bg.alpha = 0.4) +
+  tm_shape(priority_zips) +
+  tm_borders(col = "black", lwd = 3) +
+  tm_text("ZCTA5CE10", size = 1.2, col = "black", 
+          bg.color = "magenta", bg.alpha = 0.5) +
+  tm_layout(frame = FALSE, legend.title.size = 1.5, legend.text.size = 1,
+            legend.bg.color = "white")
+
+svi_map_priority4
+tmap_save(svi_map_priority4, "maps/svi_map_priority4.png")
 
 # SVI: Minority Status and Language
 svi_minority_map <- 
