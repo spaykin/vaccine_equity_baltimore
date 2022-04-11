@@ -1,4 +1,4 @@
-# Vaccine Equity in Baltimore
+# Understanding (In)Equitable Distribution of the COVID-19 Vaccine in Baltimore, Maryland
 
 ## About
 This project includes data visualization and geospatial mapping for a research and policy brief on vaccine equity issues in Baltimore, MD, in the early stages of the COVID vaccine rollout in winter 2021.  
